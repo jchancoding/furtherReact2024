@@ -7,9 +7,9 @@ function App() {
   function reducer(state, action) {
     switch (action.type) {
       case "increment":
-        return state + 1;
+        return state + action.payload;
       case "decrement":
-        return state - 1;
+        return state - action.payload;
       default:
         return state;
     }
@@ -21,8 +21,12 @@ function App() {
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <button onClick={() => setCount(count - 1)}>Decrement</button>
       Use Reducer: {state}
-      <button onClick={() => dispatch({ type: "increment" })}>Increment</button>
-      <button onClick={() => dispatch({ type: "decrement" })}>Decrement</button>
+      <button onClick={() => dispatch({ type: "increment", payload: 1 })}>
+        Increment
+      </button>
+      <button onClick={() => dispatch({ type: "decrement", payload: 1 })}>
+        Decrement
+      </button>
     </div>
   );
 }
