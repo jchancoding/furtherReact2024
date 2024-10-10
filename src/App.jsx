@@ -1,4 +1,5 @@
 import { useState, useReducer } from "react";
+import BankAccount from "./components/BankAccount";
 
 function App() {
   // create a reducer, initial value is 0
@@ -18,16 +19,26 @@ function App() {
 
   return (
     <div>
-      Use Reducer: {state.count}
-      <input
-        type="number"
-        value={state.incrementBy}
-        onChange={(e) =>
-          dispatch({ type: "setIncrementBy", payload: Number(e.target.value) })
-        }
-      />
-      <button onClick={() => dispatch({ type: "increment" })}>Increment</button>
-      <button onClick={() => dispatch({ type: "decrement" })}>Decrement</button>
+      <div>
+        Use Reducer: {state.count}
+        <input
+          type="number"
+          value={state.incrementBy}
+          onChange={(e) =>
+            dispatch({
+              type: "setIncrementBy",
+              payload: Number(e.target.value),
+            })
+          }
+        />
+        <button onClick={() => dispatch({ type: "increment" })}>
+          Increment
+        </button>
+        <button onClick={() => dispatch({ type: "decrement" })}>
+          Decrement
+        </button>
+      </div>
+      <BankAccount />
     </div>
   );
 }
