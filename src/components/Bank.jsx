@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react";
 
-export default function bankAccount() {
+export default function Bank() {
   const [state, dispatch] = useReducer(reducer, { balance: 0 });
   const [amount, setAmount] = useState(0);
 
